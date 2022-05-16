@@ -33,10 +33,8 @@ export default function Profile() {
     },
   });
 
-  console.log({ data, loading, error });
-
-  // return <div>Still working around</div>;
   if (loading) return <div>Loading ...</div>;
+  if (!data) return <div>Error...</div>;
 
   const {
     profile: {
@@ -45,8 +43,6 @@ export default function Profile() {
       user: { email, name, posts },
     },
   } = data;
-  console.log(isMyProfile);
-
   return (
     <div>
       <div
